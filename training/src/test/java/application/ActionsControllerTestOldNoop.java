@@ -1,14 +1,14 @@
 package application;
 
-import static java.lang.System.setProperty;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import javafx.scene.control.Label;
-import javafx.stage.Stage;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
+//import static java.lang.System.setProperty;
+//import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertNotNull;
+//import static org.junit.Assert.assertTrue;
+//import javafx.scene.control.Label;
+//import javafx.stage.Stage;
+//
+//import org.junit.BeforeClass;
+//import org.junit.Test;
 //import org.testfx.framework.junit.ApplicationTest;
 
 public class ActionsControllerTestOldNoop {
