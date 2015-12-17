@@ -52,8 +52,8 @@ public class ActionsController {
 
   // needs some dependency injection, but no time to investigate what better
   // suites for JavaFX / JUnit
-  private CalculationService calculationService = new CalculationService();
-  private UserResultsService userResultsService = new UserResultsService();
+  CalculationService calculationService = new CalculationService();
+  UserResultsService userResultsService = new UserResultsService();
   
   // called automatically by JavaFX
   public void initialize() {
@@ -120,7 +120,6 @@ public class ActionsController {
     }
     start.setText("Next");
     answerInput.setText("");
-//    answerInput.getStyleClass().add("correct-answer");
     answerInput.getStyleClass().removeAll("correct-answer", "wrong-answer");
     
     int valueForArg1 = 0;
@@ -145,6 +144,7 @@ public class ActionsController {
   void handleControlResultButtonClick() {   
     if (answerInput.getText().trim().length() == 0) {
       errorLabel.setText("Please give an answer!");
+      return;
     } else {
       errorLabel.setText("");
     }

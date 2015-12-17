@@ -30,6 +30,10 @@ public class UserResultsService {
     wrongCount = 0;
   }
 
+  public String getUsername() {
+    return username;
+  }
+
   public int getCorrectCount() {
     return correctCount;
   }
