@@ -4,15 +4,18 @@ import static java.lang.String.format;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 
 public class UserResultsRepository {
+  
+  PrintStream log = System.out;
 
   public void persistUserResults(String username, int correctCount, int wrongCount) {
     try (PrintWriter out = getPrintWriter()) {
       out.println(format("%s %d %d", username, correctCount, wrongCount));
     } catch (Exception e) {
-      System.out.println("Error persisting results");
+      log.println("Error persisting results");
     }
   }
 

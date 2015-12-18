@@ -7,6 +7,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.powermock.api.mockito.PowerMockito.mock;
 
+import java.io.IOException;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 
 import org.junit.Before;
@@ -33,6 +35,16 @@ public class UserRepositoryTest {
     repository.persistUserResults("username", 5, 2);
 
     verify(pw).println("username 5 2");
+  }
+  
+  @Test
+  public void writesErrorToLogIfErrorOpeningFile() throws Exception {
+    repository.log = mock(PrintStream.class);
+    when(repository.getPrintWriter()).thenThrow(new IOException());
+    
+    repository.persistUserResults("username", 5, 2);
+
+    verify(repository.log).println("Error persisting results");
   }
 
 }
