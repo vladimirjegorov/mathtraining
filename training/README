@@ -1,0 +1,6 @@
+Building the application:
+run maven install
+
+Launching the application:
+java -jar <path-to-'training-xxx-jar-with-dependencies.jar'>
+NB! Should be launched under Java 8.
